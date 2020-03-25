@@ -1,0 +1,12 @@
+.persons-card {
+    background: hotpink;
+    display: inline-block;
+    width: 33%;
+    margin: 1rem;
+    border-radius: 5px;
+    height: 200px;
+    padding: 1rem;
+    box-shadow: 0 0 5px #333;
+    font-size: 1.5rem;
+    color: white;
+  }
