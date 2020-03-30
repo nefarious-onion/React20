@@ -1,3 +1,5 @@
 ## Task 3
 
-Learning React event handlers  
+Learning React event handler  
+
+![Screenshot](Screenshot_counter.png)
