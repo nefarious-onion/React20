@@ -1,0 +1,11 @@
+.header {
+    background: rgba(22, 135, 79, 0.64);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    text-transform: uppercase;
+}
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: .5rem;
+}

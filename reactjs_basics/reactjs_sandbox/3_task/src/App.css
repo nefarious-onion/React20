@@ -1,38 +1,61 @@
-.App {
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.bg {
+  background: #FFF;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 70vh;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+
+}
+.likes {
+  background-color: white;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 5px;
+  padding: 2rem 0;
+  text-align: center;
+  transition: background-color .3 ease-in;
+}
+
+.likes.even {
+  background-color: rgba(31, 223, 127, 0.5);
+}
+.likes.odd {
+  background-color:  rgba(31, 223, 127, 1);
+}
+.likeBox {
+  font-size: 10rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+  width: 15rem;
+  height: 5rem;
+  border: none;
+  background: rgba(31, 223, 127, 0.32);
+  font-size: 2rem;
+  font-weight: 600;
+  transition: background .2s ease-in;
+  outline: none;
+  border-radius: 5px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:hover {
+  background: rgba(31, 223, 127, 1);
+  font-size: 2rem;
 }
