@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600&family=Liu+Jian+Mao+Cao&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap');
+
+.container {
+    background: url(https://images.unsplash.com/photo-1578735546632-9ff1f1e7518e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) no-repeat center center/cover;
+    padding: 4.5rem 0;
+    display: flex;
+    justify-content: space-evenly;
+}

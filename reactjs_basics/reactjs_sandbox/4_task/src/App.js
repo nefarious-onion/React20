@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Form from './Form/Form';
+import Formview from './Formview/Formview';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -21,12 +23,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Form changeHandler={this.changeHandler.bind(this)}/>
-        <p>First name: {this.state.firstName} </p>
-        <p>Last name: {this.state.lastName} </p>
-        <p>Phone: {this.state.phone} </p>
-        <p>Message: {this.state.message} </p>
+      <div className='container'>
+        <Form changeHandler={this.changeHandler}/>
+        <Formview firstName={this.state.firstName} lastName={this.state.lastName} phone={this.state.phone} message={this.state.message} />
       </div>
     );
   }
