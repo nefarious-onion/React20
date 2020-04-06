@@ -29,6 +29,9 @@ body {
   font-size: 2rem;
   padding: 2rem;
 }
+.circle-box {
+  display: flex;
+}
 
 .btn {
   background: #000;
