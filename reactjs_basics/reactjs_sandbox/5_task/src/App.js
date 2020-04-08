@@ -3,6 +3,7 @@ import './App.css';
 import Circle from './Circle/Circle';
 
 class App extends Component {
+  timer = undefined
 
   state = {
     score: 0,
@@ -10,21 +11,29 @@ class App extends Component {
     current: 0
   }
 
+  //set speed for next random number - happens once....
+  startTimer = () => {
+    this.timer = setTimeout(this.determineNext, 2000);
+  }
+  closeTimer = () => {
+    clearTimeout(this.timer);
+  }
+
   getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
   determineNext = () => {
     let nextActive;
     do {
       nextActive = this.getRandomNumber(1, 4);
     } while (this.state.current === nextActive);
-  
 
     this.setState({
       current: nextActive
     }, () => {
-      console.log('current is', this.state.current);
-    })
+      console.log('next active circle is', this.state.current);
+    });
   }
 
   clickHandler = e => {
@@ -37,8 +46,26 @@ class App extends Component {
     })
   }
 
+  //calls for timer
+  startHandler = e => {
+    console.log('Game started, current active is', this.state.current);
+    this.startTimer()
+  }
+  //endhandler -> clear timeout
+  endHandler = e => {
+    this.closeTimer()
+    //set current back to 0
+    this.setState({
+      current: 0
+    }, () => {
+      console.log('Current is ', this.state.current);
+    })
+   
+    console.log('Game ended, your score is', this.state.score)
+  }
+
   render() {
-    
+
     return (
       <div className='container--main' >
         <h1 className='header--main' >The Speed Game</h1>
@@ -50,8 +77,8 @@ class App extends Component {
           <Circle id='4' clickHandler={this.clickHandler} />
         </div>
         <div className='btn-box'>
-          <button onClick={this.determineNext} className='btn'>Start Game</button>
-          <button className='btn'>End Game</button>
+          <button onClick={this.startHandler} className='btn'>Start Game</button>
+          <button onClick={this.endHandler} className='btn'>End Game</button>
         </div>
 
       </div>
