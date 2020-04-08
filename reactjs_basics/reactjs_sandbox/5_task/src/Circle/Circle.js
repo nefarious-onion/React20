@@ -1,9 +1,15 @@
 import React from 'react';
 import './Circle.css'
 
-const Circle = ({clickHandler, id}) => {
+const Circle = ({ clickHandler, id, current }) => {
+
     return (
-        <div className='circle' id={id} onClick={clickHandler}>
+        <div 
+            id={id}
+            onClick={clickHandler}
+            className={id === current
+                ? 'circle active'
+                : 'circle'} >
         </div>
     );
 }

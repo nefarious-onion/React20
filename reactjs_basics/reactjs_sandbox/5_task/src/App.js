@@ -7,7 +7,7 @@ class App extends Component {
 
   state = {
     score: 0,
-    id: '',
+    id: 0,
     current: 0
   }
 
@@ -37,12 +37,12 @@ class App extends Component {
   }
 
   clickHandler = e => {
-    const id = e.target.id;
+    const _id = e.target.id;
 
     this.setState({
       score: this.state.score + 1
     }, () => {
-      console.log('Clicked ', id, this.state.score);
+      console.log('Clicked ', _id, this.state.score);
     })
   }
 
@@ -71,10 +71,10 @@ class App extends Component {
         <h1 className='header--main' >The Speed Game</h1>
         <div className='score-box' >Score: {this.state.score}</div>
         <div className='circle-box'>
-          <Circle id='1' clickHandler={this.clickHandler} />
-          <Circle id='2' clickHandler={this.clickHandler} />
-          <Circle id='3' clickHandler={this.clickHandler} />
-          <Circle id='4' clickHandler={this.clickHandler} />
+          <Circle current={this.state.current} id={1} clickHandler={this.clickHandler} />
+          <Circle current={this.state.current} id={2} clickHandler={this.clickHandler} />
+          <Circle current={this.state.current} id={3} clickHandler={this.clickHandler} />
+          <Circle current={this.state.current} id={4} clickHandler={this.clickHandler} />
         </div>
         <div className='btn-box'>
           <button onClick={this.startHandler} className='btn'>Start Game</button>
