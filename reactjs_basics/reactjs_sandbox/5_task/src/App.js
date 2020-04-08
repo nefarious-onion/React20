@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Circle from './Circle/Circle';
+import GameOver from './GameOver/GameOver';
 
 class App extends Component {
   timer = undefined
@@ -8,7 +9,8 @@ class App extends Component {
   state = {
     score: 0,
     id: 0,
-    current: 0
+    current: 0,
+    showGameOver: false
   }
 
   //set speed for next random number - happens once....
@@ -47,16 +49,17 @@ class App extends Component {
   }
 
   //calls for timer
-  startHandler = e => {
+  startHandler = () => {
     console.log('Game started, current active is', this.state.current);
     this.startTimer()
   }
   //endhandler -> clear timeout
-  endHandler = e => {
+  endHandler = () => {
     this.closeTimer()
     //set current back to 0
     this.setState({
-      current: 0
+      current: 0,
+      showGameOver: true
     }, () => {
       console.log('Current is ', this.state.current);
     })
@@ -64,10 +67,19 @@ class App extends Component {
     console.log('Game ended, your score is', this.state.score)
   }
 
+  closeHandler = () => {
+    this.setState({
+      showGameOver: false,
+      score: 0
+    })
+  }
+
+
   render() {
 
     return (
-      <div className='container--main' >
+      <div className='container--main'>
+        <GameOver score={this.state.score} showGameOver={this.state.showGameOver} closeHandler={this.closeHandler}/>
         <h1 className='header--main' >The Speed Game</h1>
         <div className='score-box' >Score: {this.state.score}</div>
         <div className='circle-box'>

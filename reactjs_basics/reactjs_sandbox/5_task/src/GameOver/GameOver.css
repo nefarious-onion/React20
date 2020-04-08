@@ -1,0 +1,28 @@
+.overlay {
+    height: 100%;
+    width: 100%;
+    background: rgba(63, 63, 63, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.popup {
+    background: rgba(255,101,199, 1);
+    display: inline-block;
+    padding: 2rem 4rem;
+    text-align: center;
+    border-radius: 5px;
+}
+.popup h1 {
+    font-size: 4rem;
+}
+.popup h2, .endScore {
+    font-size: 2rem;
+}
+.closeButton {
+    border: none;
+
+}
