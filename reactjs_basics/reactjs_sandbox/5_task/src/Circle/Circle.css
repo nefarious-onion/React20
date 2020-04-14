@@ -5,6 +5,16 @@
     background: #000;
     margin: 1rem;
 }
+.circle.level2 {
+    background: red;
+}
+.circle.level3 {
+    background: yellow;
+}
 .circle.active {
-    background: orange;
+    background: url('./alpaca.jpg') no-repeat center center/cover;
+}
+.circle.active.clicked {
+    background:  url('./brain.jpg') no-repeat center center/cover;
+    transition: background 2s ease-in;
 }

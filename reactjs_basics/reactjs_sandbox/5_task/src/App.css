@@ -8,7 +8,7 @@
 body {
   background: rgb(255,101,199);
   background: linear-gradient(0deg, rgba(255,101,199,1) 0%, rgba(255,139,46,1) 100%);
-  height: 100vh;
+  height: 110vh;
   font-family: 'Concert One', cursive;
 }
 .container--main {
@@ -28,6 +28,7 @@ body {
   text-align: center;
   font-size: 2rem;
   padding: 2rem;
+  border-radius: 5px;
 }
 .circle-box {
   display: flex;
