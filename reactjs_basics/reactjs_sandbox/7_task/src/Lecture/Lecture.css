@@ -1,0 +1,11 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+.vote-box {
+    background: hotpink;
+    text-align: center;
+    padding: 3rem;
+    width: 300px;
+}
