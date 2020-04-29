@@ -1,0 +1,10 @@
+.about-container {
+    display: flex;
+    padding: 2rem;
+}
+.about-img {
+    flex: 1;
+}
+.about-text {
+    flex: 3;
+}

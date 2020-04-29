@@ -1,0 +1,6 @@
+.home-container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 90vh;
+}
