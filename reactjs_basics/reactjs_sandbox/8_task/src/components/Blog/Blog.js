@@ -1,7 +1,7 @@
 import React from 'react';
-import Post from './Post';
+import Post from '../Post/Post';
 import './Blog.css';
-import postData from '../data/postData.json';
+import postData from '../../data/postData.json';
 
 //const posts = postData;
 class Blog extends React.Component {
