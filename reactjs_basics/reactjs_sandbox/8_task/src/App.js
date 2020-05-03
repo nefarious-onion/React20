@@ -7,9 +7,9 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-import Home from './Home'
-import About from './About'
-import Blog from './Blog'
+import Home from './components/Home/Home'
+import About from './components/About/About'
+import Blog from './components/Blog/Blog'
 import './App.css';
 
 const App = () => {
