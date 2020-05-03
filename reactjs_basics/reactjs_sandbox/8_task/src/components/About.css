@@ -4,7 +4,9 @@
 }
 .about-img {
     flex: 1;
+
 }
 .about-text {
     flex: 3;
+    margin-left: 2rem;
 }
