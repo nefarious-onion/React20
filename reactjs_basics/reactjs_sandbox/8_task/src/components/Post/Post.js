@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link, useParams } from "react-router-dom";
 import './Post.css';
 
-const Post = ({title, author, image, content}) => {
-    console.log(image);
+const Post = ({title, author, image, content, id}) => {
+
     return (
         <div className='post-item'>
             <img src={image} height='80px'/>
             <h3>{title}</h3>
             <p>{author}</p>
             <p>{content}</p>
-            <button>Read More</button>
+            <Link to={`/blog/${id}`} >Read More</Link>
         </div>
     );
 }
