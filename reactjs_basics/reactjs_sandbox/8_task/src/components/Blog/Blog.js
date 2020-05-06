@@ -1,33 +1,41 @@
 import React from 'react';
-import Post from '../Post/Post';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
+} from "react-router-dom";
 import './Blog.css';
 import postData from '../../data/postData.json';
+import Postlist from '../Postlist/Postlist';
+import Post from '../Post/Post';
 
 //const posts = postData;
-class Blog extends React.Component {
-    state = {
-        posts: [...postData]
-    }
+const Blog = () => {
+    const posts = postData;
+
+
 
     //use switch between postlist and single post (use parameters)
-    render() {
-        console.log(this.state.posts)
 
-        const posts = [...this.state.posts]
-            .map( ({id, title, image, author, content}) => 
-            <Post 
-                key={id}
-                title={title}
-                image={image}
-                author={author}
-                content={content. substring(0, 50) + '...'}
-            />);
     return (
-        <div className='blog-container'>
-            {posts}
-        </div>
+        <Router>
+            <div className='blog-container'>
+                <Switch>
+                    <Route path='/blog' exact>
+                        <Postlist posts={posts} />
+                    </Route>
+                    <Route path='/blog/:postId'>
+                        <Post posts={posts}/>
+                    </Route>
+
+                </Switch>
+            </div>
+        </Router>
+
     );
-    }
 }
 
 export default Blog;
