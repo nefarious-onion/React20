@@ -13,7 +13,7 @@ const FullPost = () => {
   useEffect(() => {
     if (!loadedPost) {
       axios
-        .get(`https://jsonplaceholder.typicode.com/photos/${postId}`)
+        .get(`http://localhost:3001/posts/${postId}`)
         .then(response => {
           console.log(response.data)
           setloadedPost(response.data)
@@ -30,7 +30,9 @@ const FullPost = () => {
     postData = <div className="fullPost">
       <h1>Post {loadedPost.id}</h1>
       <p>{loadedPost.title}</p>
-      <img src={loadedPost.thumbnailUrl} alt={loadedPost.title} />
+      <p>{loadedPost.author}</p>
+      <img src={loadedPost.img} alt={loadedPost.title} />
+      <p>{loadedPost.desc}</p>
     </div>
   }
 

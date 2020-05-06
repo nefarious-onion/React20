@@ -11,7 +11,7 @@ const Blog = () => {
   let match = useRouteMatch();
 
     useEffect(() => {
-      axios.get('https://jsonplaceholder.typicode.com/photos')
+      axios.get('http://localhost:3001/posts')
       .then(response => {
         const posts = response.data.slice(0, 10);
         setPosts(posts);
@@ -25,7 +25,7 @@ const Blog = () => {
         key={p.id}
         title={p.title}
         desc={p.desc}
-        img={p.thumbnailUrl}
+        img={p.img}
         link={`${match.url}/${p.id}`}
       />
     );
