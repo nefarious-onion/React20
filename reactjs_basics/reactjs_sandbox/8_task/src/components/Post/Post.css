@@ -1,8 +1,20 @@
-.post-item {
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
     padding: 2rem;
-    height: 25rem;
-    width: 15rem;
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: 1rem;
+}
+
+.post-img {
+    flex: 2;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-content {
+    flex: 3 2;
+}
+
+.post-content h1 {
+    margin-bottom: 1rem;
 }

@@ -2,15 +2,24 @@ import React from 'react';
 import { Link, useParams } from "react-router-dom";
 import './Post.css';
 
-const Post = ({title, author, image, content, id}) => {
+const Post = ({ posts }) => {
+    let { postId } = useParams();
+    console.log(postId);
+    console.log(posts[postId - 1].id);
+    let post = posts.find(({ id }) => id === Number(postId));
+    console.log(post)
 
     return (
-        <div className='post-item'>
-            <img src={image} height='80px'/>
-            <h3>{title}</h3>
-            <p>{author}</p>
-            <p>{content}</p>
-            <Link to={`/blog/${id}`} >Read More</Link>
+        <div className='post-container'>
+            <div className='post-img'>
+                <img src={post.image} height='300px' />
+            </div>
+            <div className='post-content'>
+                <h1>{post.title}</h1>
+                <p>{post.author}</p>
+                <p>{post.content}</p>
+                <Link to='/blog' >Go back to blog</Link>
+            </div>
         </div>
     );
 }
